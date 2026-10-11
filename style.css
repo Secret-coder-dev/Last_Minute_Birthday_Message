@@ -1,0 +1,874 @@
+
+:root {
+  --cream: #fff8f2;
+  --pink: #f3b9c8;
+  --rose: #df7898;
+  --deep-rose: #bc4d75;
+  --dark: #624650;
+  --muted: #987c85;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--deep-rose);
+  outline-offset: 4px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.eyebrow {
+  color: var(--deep-rose);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.9;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin-top: 20px;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 40px;
+  background: var(--deep-rose);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 24px #bc4d7530;
+}
+
+.button:active {
+  transform: scale(.97);
+}
+
+.music-btn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 600;
+  padding: 10px 14px;
+  border: 1px solid #f0d3dd;
+  border-radius: 30px;
+  background: #ffffffed;
+  color: var(--deep-rose);
+  font-size: 11px;
+}
+
+/* OPENING HEART */
+.opening {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 70px 20px 35px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #f9dce7, transparent 50%),
+    var(--cream);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.opening::before,
+.opening::after {
+  position: absolute;
+  z-index: -1;
+  color: var(--rose);
+  font-size: 30px;
+  content: "✧";
+  animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+.opening::before {
+  top: 22%;
+  left: 12%;
+}
+
+.opening::after {
+  right: 12%;
+  bottom: 22%;
+}
+
+.heart-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 165px;
+  height: 165px;
+  margin: 22px 0;
+  border: 0;
+  background: transparent;
+}
+
+.big-heart {
+  position: relative;
+  z-index: 1;
+  color: var(--deep-rose);
+  font-size: 105px;
+  line-height: 1;
+  filter: drop-shadow(0 8px 18px #bc4d7545);
+  animation: heartbeat 1.3s ease-in-out infinite;
+}
+
+.heart-glow {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: #f2a8c1;
+  filter: blur(30px);
+  animation: heartGlow 2s ease-in-out infinite alternate;
+}
+
+.heart-star {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  color: #d5a361;
+  font-size: 24px;
+  animation: sparkle 1s infinite alternate;
+}
+
+.opening h2 {
+  margin: 12px 0;
+  font: 700 clamp(30px, 7vw, 43px) "Dancing Script", cursive;
+}
+
+.opening h2 span {
+  color: var(--deep-rose);
+}
+
+.opening-text {
+  margin-bottom: 15px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.tiny-note {
+  margin-top: 23px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* BIRTHDAY TITLE */
+.title-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #f17e9e, #d93470, #ef7395);
+}
+
+.title-glow {
+  position: absolute;
+  width: min(80vw, 500px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ffc0d2;
+  filter: blur(95px);
+  opacity: .3;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.title-small,
+.title-reveal h1,
+.title-name,
+.title-sparkles {
+  position: relative;
+}
+
+.title-small {
+  color: #fff1f5;
+  font-size: 10px;
+  letter-spacing: 3px;
+  animation: titleTextIn .8s .2s both;
+}
+
+.title-reveal h1 {
+  margin: 25px 0 12px;
+  font: 700 clamp(54px, 12vw, 105px)/.98 "Playfair Display", serif;
+  letter-spacing: -2px;
+  text-shadow: 0 6px 25px #8f204630;
+  animation: titleTextIn 1s .45s both;
+}
+
+.title-name {
+  margin-top: 15px;
+  font: 700 clamp(30px, 6vw, 43px) "Dancing Script", cursive;
+  animation: titleTextIn 1s .8s both;
+}
+
+.title-sparkles {
+  margin-top: 35px;
+  font-size: 19px;
+  letter-spacing: 7px;
+  animation: sparkle 1.5s infinite alternate;
+}
+
+/* MAIN BIRTHDAY GREETING */
+.birthday-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 85px max(7%, calc((100% - 1100px) / 2));
+  background:
+    radial-gradient(ellipse at 75% 45%, #fbe3eb, transparent 45%),
+    var(--cream);
+}
+
+.hero-message {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-message h1 {
+  margin: 20px 0 5px;
+  font: 700 clamp(48px, 7vw, 84px)/1.05 "Playfair Display", serif;
+}
+
+.hero-message h1 span,
+.section-heading em,
+.ending h2 em {
+  color: var(--deep-rose);
+}
+
+.script-name {
+  margin: 14px 0;
+  color: var(--deep-rose);
+  font: 700 clamp(28px, 4vw, 40px) "Dancing Script", cursive;
+}
+
+.description {
+  max-width: 410px;
+  margin: 16px 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+/* MINI TREE IN GREETING */
+.hero-tree {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 390px;
+  margin: auto;
+}
+
+.mini-tree-canopy {
+  position: absolute;
+  inset: 0 0 60px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.mini-tree-branches {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mini-tree-branches path {
+  fill: none;
+  stroke: #a5795e;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 0;
+}
+
+.mini-tree-trunk {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  z-index: 1;
+  width: 20px;
+  height: 165px;
+  border-radius: 10px 10px 5px 5px;
+  background: linear-gradient(90deg, #94664f, #c49a78, #a5795e);
+  transform: translateX(-50%);
+}
+
+.mini-tree-ground {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  width: 70%;
+  height: 25px;
+  border-radius: 50%;
+  background: #ead0c2;
+  transform: translateX(-50%);
+}
+
+.mini-heart {
+  position: absolute;
+  opacity: 0;
+  animation: leafAppear .6s ease forwards;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* JOURNEY: ONLY ONE PART AT A TIME */
+.journey-panel {
+  display: none !important;
+}
+
+.journey-panel.journey-active {
+  display: block !important;
+  animation: journeyFadeIn .7s ease both;
+}
+
+.birthday-hero.journey-active {
+  display: grid !important;
+}
+
+.section {
+  position: relative;
+  padding: 80px 22px;
+  text-align: center;
+}
+
+.section-heading {
+  margin: 17px auto;
+  font: 600 clamp(30px, 6vw, 48px)/1.2 "Playfair Display", serif;
+}
+
+.section-description {
+  max-width: 530px;
+  margin: 15px auto 25px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.next-step {
+  display: flex;
+  width: fit-content;
+  margin: 30px auto 0;
+}
+
+/* BIRTHDAY WISH */
+.wish-section {
+  min-height: 80vh;
+  background: #fff0f4;
+}
+
+.wish-card {
+  max-width: 670px;
+  margin: 15px auto;
+  padding: clamp(28px, 6vw, 60px);
+  border: 1px solid white;
+  border-radius: 24px;
+  background: #ffffffd9;
+  box-shadow: 0 12px 35px #99566f20;
+}
+
+.wish-card h2 {
+  margin: 20px 0;
+  font: 600 clamp(33px, 6vw, 50px)/1.2 "Playfair Display", serif;
+}
+
+.wish-card > p:not(.eyebrow) {
+  margin: 0 auto 25px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.secret-wish {
+  padding: 20px;
+  border-radius: 14px;
+  background: #fff0f5;
+  color: var(--deep-rose) !important;
+  animation: journeyFadeIn .5s both;
+}
+
+/* INTERACTIVE GROWING TREE */
+.tree-section {
+  min-height: 850px;
+  overflow: visible;
+  background: var(--cream);
+}
+
+.growing-tree {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 480px);
+  height: 400px;
+  margin: 25px auto;
+  overflow: visible;
+}
+
+.tree-canopy {
+  position: absolute;
+  inset: 0 0 65px;
+  z-index: 4;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.growing-branches {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.growing-branches .branch {
+  fill: none;
+  stroke: #a5795e;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: branchGrow .9s ease forwards;
+}
+
+.growing-trunk {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  z-index: 2;
+  width: 22px;
+  height: 175px;
+  border-radius: 12px 12px 5px 5px;
+  background: linear-gradient(90deg, #94664f, #c49a78, #a5795e);
+  transform: translateX(-50%);
+  transition: height .7s ease;
+}
+
+.growing-ground {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  z-index: 1;
+  width: 65%;
+  height: 28px;
+  border-radius: 50%;
+  background: #ead0c2;
+  transform: translateX(-50%);
+}
+
+.growing-leaf {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  animation: leafAppear .6s cubic-bezier(.2,.8,.2,1) forwards;
+  pointer-events: none;
+}
+
+.tree-message {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* PHOTO GALLERY */
+.memories {
+  background: #fff0f4;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: min(100%, 900px);
+  margin: 35px auto 20px;
+}
+
+.photo {
+  min-width: 0;
+  padding: 8px 8px 15px;
+  border: 0;
+  background: white;
+  box-shadow: 0 7px 25px #70434e12;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.photo:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+
+.photo:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.photo:hover {
+  z-index: 2;
+  transform: translateY(-5px) rotate(0);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #f7dfe7;
+}
+
+.photo span {
+  display: block;
+  padding-top: 12px;
+  color: var(--deep-rose);
+  font: 500 clamp(12px, 2vw, 17px) "Dancing Script", cursive;
+}
+
+.gallery-tip {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* PERSONAL LETTER */
+.letter-section {
+  background:
+    radial-gradient(ellipse at 10% 10%, #fbe2e9, transparent 35%),
+    var(--cream);
+}
+
+.letter {
+  width: min(100%, 700px);
+  margin: 35px auto 0;
+  overflow: hidden;
+  border: 1px solid #f1d8df;
+  border-radius: 7px;
+  background: #fffefa;
+  box-shadow: 0 12px 35px #99566f20;
+  text-align: left;
+}
+
+.letter-top {
+  padding: 17px;
+  background: #f6dfe7;
+  color: var(--deep-rose);
+  text-align: center;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.letter-body {
+  padding: clamp(25px, 6vw, 55px);
+  color: #654a55;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.letter-flower {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.letter-body h3 {
+  margin-bottom: 28px;
+  color: var(--deep-rose);
+  text-align: center;
+  font: 700 clamp(24px, 5vw, 35px) "Dancing Script", cursive;
+}
+
+.letter-body p {
+  margin-bottom: 19px;
+}
+
+.letter-signature span {
+  color: var(--deep-rose);
+  font: 700 25px "Dancing Script", cursive;
+}
+
+/* FINAL CELEBRATION */
+.ending {
+  min-height: 75vh;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  background: linear-gradient(150deg, #fff0f4, #f9dfe8);
+}
+
+.ending-heart {
+  margin-bottom: 22px;
+  color: var(--deep-rose);
+  font-size: 62px;
+  animation: heartbeat 1.5s infinite;
+}
+
+.ending h2 {
+  margin: 25px 0;
+  font: 600 clamp(38px, 8vw, 68px)/1.15 "Playfair Display", serif;
+}
+
+.ending-note {
+  margin-top: 26px;
+  color: var(--muted);
+  font: 500 20px "Dancing Script", cursive;
+}
+
+footer {
+  padding: 22px 12px;
+  background: #f2dce4;
+  color: var(--deep-rose);
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+/* PHOTO VIEWER */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  display: grid;
+  place-items: center;
+  padding: 25px;
+  background: #24171ded;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 85svh;
+  object-fit: contain;
+}
+
+#closePhoto {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 40px;
+}
+
+/* FLOATING HEARTS AND CONFETTI */
+.floating-heart,
+.confetti-piece {
+  position: fixed;
+  z-index: 800;
+  pointer-events: none;
+}
+
+.floating-heart {
+  bottom: -35px;
+  color: var(--deep-rose);
+  animation: floatHeart 3.5s ease-out forwards;
+}
+
+.confetti-piece {
+  top: -15px;
+  animation: confettiFall var(--duration, 3s) linear forwards;
+}
+
+/* ANIMATIONS */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.14); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+@keyframes heartGlow {
+  from { opacity: .35; transform: scale(.8); }
+  to { opacity: .75; transform: scale(1.2); }
+}
+
+@keyframes sparkle {
+  from { opacity: .45; transform: scale(.92) rotate(-7deg); }
+  to { opacity: 1; transform: scale(1.08) rotate(7deg); }
+}
+
+@keyframes titleTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes titleGlow {
+  from { opacity: .15; transform: scale(.8); }
+  to { opacity: .4; transform: scale(1.15); }
+}
+
+@keyframes journeyFadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes branchGrow {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes leafAppear {
+  0% { opacity: 0; transform: scale(0) rotate(-30deg); }
+  70% { opacity: 1; transform: scale(1.15) rotate(8deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-110svh) rotate(35deg); opacity: 0; }
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translate3d(var(--drift, 30px), 110svh, 0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 650px) {
+  .section {
+    padding: 65px 17px;
+  }
+
+  .birthday-hero,
+  .birthday-hero.journey-active {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 85px 22px 45px;
+    text-align: center;
+  }
+
+  .hero-message h1 {
+    font-size: clamp(49px, 13vw, 75px);
+  }
+
+  .description {
+    margin: 15px auto 20px;
+  }
+
+  .hero-tree {
+    height: 300px;
+    max-width: 330px;
+  }
+
+  .growing-tree {
+    width: min(100%, 350px);
+    height: 340px;
+  }
+
+  .growing-trunk {
+    height: 145px;
+  }
+
+  .tree-section {
+    min-height: 760px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .photo {
+    padding: 6px 6px 12px;
+  }
+
+  .photo span {
+    font-size: 14px;
+  }
+
+  .letter-body {
+    font-size: 12px;
+    line-height: 1.95;
+  }
+}
+
+@media (max-width: 350px) {
+  .photo-grid {
+    gap: 9px;
+  }
+
+  .photo span {
+    font-size: 12px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .button {
+    padding: 12px 17px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

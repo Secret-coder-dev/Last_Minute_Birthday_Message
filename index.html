@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f2">
+  <title>Happy Birthday, Isha! ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <audio id="music" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicBtn" class="music-btn" type="button">
+    ♫ Music off
+  </button>
+
+  <!-- PART 1: OPENING HEART -->
+  <section id="opening" class="opening">
+    <p class="eyebrow">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+
+    <button id="openHeart" class="heart-button" type="button" aria-label="Open birthday surprise">
+      <span class="heart-glow"></span>
+      <span class="big-heart">♥</span>
+      <span class="heart-star">✧</span>
+    </button>
+
+    <h2>For you, Isha <span>♡</span></h2>
+    <p class="opening-text">There's something waiting just for you.</p>
+
+    <button id="openBtn" class="button" type="button">
+      Open your surprise ♡
+    </button>
+
+    <p class="tiny-note">Made with love, especially for you.</p>
+  </section>
+
+  <!-- PART 2: BIRTHDAY TITLE -->
+  <section id="titleReveal" class="title-reveal hidden" aria-hidden="true">
+    <div class="title-glow"></div>
+    <p class="title-small">TODAY IS ALL ABOUT YOU</p>
+    <h1>Happy<br>Birthday!</h1>
+    <p class="title-name">Dear Isha ♡</p>
+    <p class="title-sparkles">✦　♡　✧　♡　✦</p>
+  </section>
+
+  <!-- PARTS 3–8: MAIN BIRTHDAY JOURNEY -->
+  <main id="birthday" class="hidden">
+
+    <!-- PART 3: GREETING AND TREE -->
+    <section class="journey-panel birthday-hero" data-part="0">
+      <div class="hero-message">
+        <p class="eyebrow">A DAY AS SPECIAL AS YOU</p>
+
+        <h1>Happy<br><span>Birthday!</span></h1>
+
+        <p class="script-name">Dear Isha ♡</p>
+
+        <p class="description">
+          To my favorite human and one of life's sweetest blessings.
+          May your world always be filled with love, laughter,
+          and beautiful reasons to smile.
+        </p>
+      </div>
+
+      <div class="hero-tree">
+        <div class="mini-tree-canopy" id="miniTreeCanopy"></div>
+
+        <svg viewBox="0 0 320 360" class="mini-tree-branches" aria-hidden="true">
+          <path d="M160 330 L160 180"/>
+          <path d="M160 275 L115 235 L85 185"/>
+          <path d="M160 250 L205 215 L245 165"/>
+          <path d="M160 220 L125 180 L110 135"/>
+          <path d="M160 195 L190 155 L210 115"/>
+          <path d="M160 290 L115 270 L85 240"/>
+          <path d="M160 275 L205 245 L235 215"/>
+          <path d="M160 180 L155 135 L170 95"/>
+        </svg>
+
+        <div class="mini-tree-trunk"></div>
+        <div class="mini-tree-ground"></div>
+      </div>
+
+      <p class="scroll-hint">YOUR LITTLE SURPRISE STARTS HERE ♡</p>
+
+      <button class="button next-step" data-next="1" type="button">
+        Continue to your birthday wish ↓
+      </button>
+    </section>
+
+    <!-- PART 4: BIRTHDAY WISH -->
+    <section class="journey-panel section wish-section" data-part="1">
+      <div class="wish-card">
+        <p class="eyebrow">A WISH JUST FOR YOU</p>
+
+        <h2>Close your eyes.<br><em>Dream a little.</em></h2>
+
+        <p>
+          May this new chapter bring you peace, genuine love,
+          unforgettable memories, and beautiful reasons to smile.
+        </p>
+
+        <button id="wishBtn" class="button" type="button">
+          Reveal a little wish ♡
+        </button>
+
+        <p id="secretWish" class="secret-wish hidden">
+          I hope you never forget how loved, appreciated, and
+          irreplaceable you are. Keep shining, Isha. 🌷
+        </p>
+      </div>
+
+      <button class="button next-step" data-next="2" type="button">
+        Let's grow our friendship tree 🌱
+      </button>
+    </section>
+
+    <!-- PART 5: INTERACTIVE GROWING TREE -->
+    <section class="journey-panel section tree-section" data-part="2">
+      <p class="eyebrow">A LITTLE SYMBOL OF US</p>
+
+      <h2 class="section-heading">
+        A friendship that <em>keeps growing.</em>
+      </h2>
+
+      <p class="section-description">
+        Just like a tree, may our friendship continue to grow
+        through every season of life.
+      </p>
+
+      <div class="growing-tree" id="growingTree">
+        <div class="tree-canopy" id="treeCanopy"></div>
+
+        <svg
+          class="growing-branches"
+          viewBox="0 0 320 360"
+          preserveAspectRatio="xMidYMid meet"
+          aria-label="A tree with heart-shaped leaves"
+        >
+          <g id="branchLayer"></g>
+        </svg>
+
+        <div class="growing-trunk" id="growingTrunk"></div>
+        <div class="growing-ground"></div>
+      </div>
+
+      <button id="growTreeBtn" class="button" type="button">
+        Keep growing ♡
+      </button>
+
+      <p id="treeMessage" class="tree-message" aria-live="polite">
+        Rooted in love, growing through life. 💗
+      </p>
+
+      <button class="button next-step" data-next="3" type="button">
+        See our memories ♡
+      </button>
+    </section>
+
+    <!-- PART 6: PHOTO GALLERY -->
+    <section class="journey-panel section memories" data-part="3">
+      <p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+
+      <h2 class="section-heading">
+        Our kind of <em>forever.</em>
+      </h2>
+
+      <p class="section-description">
+        A few moments worth keeping close to the heart.
+      </p>
+
+      <div class="photo-grid">
+        <button class="photo" type="button">
+          <img src="photo1.jpg" alt="Memory one">
+          <span>Special ♡</span>
+        </button>
+
+        <button class="photo" type="button">
+          <img src="photo2.jpg" alt="Memory two">
+          <span>Memories ♡</span>
+        </button>
+
+        <button class="photo" type="button">
+          <img src="photo3.jpg" alt="Memory three">
+          <span>Of ♡</span>
+        </button>
+
+        <button class="photo" type="button">
+          <img src="photo4.jpg" alt="Memory four">
+          <span>You ♡</span>
+        </button>
+
+        <button class="photo" type="button">
+          <img src="photo5.jpg" alt="Memory five">
+          <span>Being ♡</span>
+        </button>
+
+        <button class="photo" type="button">
+          <img src="photo6.jpg" alt="Memory six">
+          <span>You ♡</span>
+        </button>
+      </div>
+
+      <p class="gallery-tip">Tap a picture to view it.</p>
+
+      <button class="button next-step" data-next="4" type="button">
+        Read your birthday letter 💌
+      </button>
+    </section>
+
+    <!-- PART 7: PERSONAL LETTER -->
+    <section class="journey-panel section letter-section" data-part="4">
+      <p class="eyebrow">ISANG MENSAHE PARA SA'YO</p>
+
+      <h2 class="section-heading">
+        A letter for <em>Isha.</em>
+      </h2>
+
+      <article class="letter">
+        <div class="letter-top">♡ &nbsp; A LITTLE LETTER &nbsp; ♡</div>
+
+        <div class="letter-body">
+          <div class="letter-flower">🌷</div>
+
+          <h3>Happy Birthday, Bestie!</h3>
+
+          <p>Dear Isha,</p>
+
+          <p>
+            Happy birthday sa isa sa mga taong nagpapasaya sa buhay ko.
+            Sana sa espesyal na araw na ito, maramdaman mo kung gaano
+            ka kahalaga at kung gaano ka kamahal ng mga taong nasa paligid mo.
+          </p>
+
+          <p>
+            Thank you for the laughter, random conversations, unforgettable
+            memories, and even the little moments that mean so much to me.
+            I am genuinely grateful to have a friend like you.
+          </p>
+
+          <p>
+            Sa panibagong taon ng buhay mo, sana mas marami ka pang maabot
+            na pangarap. Sana piliin mo rin ang sarili mo, magpahinga kapag
+            napapagod, at huwag kalimutang maging proud sa sarili mo.
+          </p>
+
+          <p>
+            Life will not always be easy, but I hope you never forget how
+            strong you are and how much good you bring into other people's lives.
+          </p>
+
+          <p>
+            Enjoy your special day, Isha. Keep growing, keep dreaming,
+            and keep being the wonderful person that you are.
+            You deserve all the beautiful things this world has to offer.
+          </p>
+
+          <p class="letter-signature">
+            With lots of love,<br>
+            <span>Your Kuya Klawi ♡</span>
+          </p>
+        </div>
+      </article>
+
+      <button class="button next-step" data-next="5" type="button">
+        One last surprise ✨
+      </button>
+    </section>
+
+    <!-- PART 8: FINAL CELEBRATION -->
+    <section class="journey-panel section ending" data-part="5">
+      <div class="ending-heart">♥</div>
+
+      <p class="eyebrow">ONE LAST THING</p>
+
+      <h2>
+        You're a gift<br>to this world, <em>Isha.</em>
+      </h2>
+
+      <p class="section-description">
+        I hope this little corner of the internet reminds you
+        that someone is really happy you exist.
+      </p>
+
+      <button id="celebrateBtn" class="button" type="button">
+        Send you a little love 💗
+      </button>
+
+      <p class="ending-note">Made with love, just for you.</p>
+    </section>
+
+    <footer>HAPPY BIRTHDAY, ISHA ♡ MADE WITH LOVE</footer>
+  </main>
+
+  <!-- PHOTO VIEWER -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <button id="closePhoto" type="button" aria-label="Close photo">×</button>
+    <img id="largePhoto" src="" alt="Birthday memory">
+  </div>
+
+</body>
+</html>
